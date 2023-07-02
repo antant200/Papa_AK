@@ -132,7 +132,7 @@ public class Bot extends TelegramLongPollingBot {
 
 
                 response = ("<b> Монета: " + nameMoney + "</b> (Шорт)" + "\n" +
-                        "\uD83D\uDD34 <b> <i> Точка  входа 1.   --> </b> </i> " + entryPoint +
+                        "\uD83D\uDD34 <b> <i> Точка  входа 1.   --></i> </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n" +
                         "<b>Точка выхода (3%): </b>" + resultExitPrice1 + "\n" + "\n"
                         + "\uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 2.   --> </b> " + resultCost2 +
