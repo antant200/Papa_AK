@@ -99,10 +99,10 @@ public class Bot extends TelegramLongPollingBot {
                         "\uD83D\uDFE2<b>Точка  входа 1.  --> </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n" +
                         "<b>Точка выхода (3%): </b>" + resultExitPrice1 + "\n" + "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 2. </b> " + resultCost2 +
+                        + "\uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 2.  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +  "\n"
                         + "<b>Точка выхода (5%): </b>" + resultExitPrice + "\n" + "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 3.</b>" + resultCost3+
+                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 3.  --> </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +  "\n"
                         + "<b>Точка выхода (10%): </b>" + resultExitPrice2);
 
@@ -131,14 +131,14 @@ public class Bot extends TelegramLongPollingBot {
 
 
 
-                response = ("Монета: " + nameMoney + "(Шорт)" + "\n" +
-                        "\uD83D\uDD34 <b>Точка  входа 1. </b> " + entryPoint +
+                response = ("<b> Монета: " + nameMoney + "</b> (Шорт)" + "\n" +
+                        "\uD83D\uDD34 <b> <i> Точка  входа 1.   --> </b> </i> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n" +
                         "<b>Точка выхода (3%): </b>" + resultExitPrice1 + "\n" + "\n"
-                        + "\uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 2. </b> " + resultCost2 +
+                        + "\uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 2.   --> </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +  "\n"
                         + "<b>Точка выхода (5%): </b>" + resultExitPrice + "\n" + "\n"
-                        + "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 3.</b>" + resultCost3+
+                        + "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 3.  --> </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +  "\n"
                         + "<b>Точка выхода (10%): </b>" + resultExitPrice2);
             }
