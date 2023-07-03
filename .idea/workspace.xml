@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e80b56b6-ce09-4a1d-9ae4-383a8a5a7762" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Papa_Ak_bot/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Papa_Ak_bot/Bot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/COPMBASTER/Desktop/PAPINTELEg"
+    "last_opened_file_path": "C:/Users/COPMBASTER/Desktop/Papa_Ak_bot"
   }
 }]]></component>
   <component name="RecentsManager">

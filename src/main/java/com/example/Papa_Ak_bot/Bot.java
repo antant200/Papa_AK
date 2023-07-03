@@ -59,7 +59,7 @@ public class Bot extends TelegramLongPollingBot {
             operation=textMess;
             operationMoney = "депозит";
         }  else if (!check && operationMoney.equals("депозит")){
-            money = Integer.parseInt(textMess)*2;
+            money = Integer.parseInt(textMess);
             operationMoney=null;
             check=true;
             response = "Введите название монеты:";
@@ -69,78 +69,82 @@ public class Bot extends TelegramLongPollingBot {
         } else if (isNumeric(textMess)) {
             double entryPoint = Double.parseDouble(textMess);
 
-            int amount1, amount2, amount3;
-            double cost2, cost3, averageCost, averageCost2,exitPrice, exitPrice2, profit, profit2, exitPrice1,profit1;
+            int amount1, amount2, amount3, amount4;
+            double cost2, cost3,cost4, averageCost, averageCost2,exitPrice, exitPrice2, exitPrice1;
             if (operation.equals("Лонг")) {
 
-                amount1 = (int) Math.ceil((money / entryPoint) * 0.3);
-                exitPrice1 = 1.03 * entryPoint;
-                BigDecimal resultExitPrice1 = new BigDecimal(exitPrice1).setScale(4,HALF_UP);
+                amount1 = (int) Math.ceil((money / entryPoint) * 0.15);
+//                exitPrice1 = 1.03 * entryPoint;
+//                BigDecimal resultExitPrice1 = new BigDecimal(exitPrice1).setScale(4,HALF_UP);
 
                 cost2 = 0.95 * entryPoint;
                 BigDecimal resultCost2 = new BigDecimal(cost2).setScale(4, HALF_UP);
-                averageCost = (cost2 + entryPoint) / 2;
-                amount2 = amount1;
-                exitPrice = 1.05*averageCost;
-                BigDecimal resultExitPrice =  new BigDecimal(exitPrice).setScale(4,HALF_UP);
+//                averageCost = (cost2 + entryPoint) / 2;
+                amount2 = (int) Math.ceil((money / entryPoint) * 0.2);
+//                exitPrice = 1.05*averageCost;
+//                BigDecimal resultExitPrice =  new BigDecimal(exitPrice).setScale(4,HALF_UP);
 
 
 
 
                 cost3 = 0.9 * entryPoint;
                 BigDecimal resultCost3 = new BigDecimal(cost3).setScale(4, HALF_UP);
-                amount3 = (int) ceil((money/ entryPoint) * 0.4);
-                averageCost2 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
-                exitPrice2 = 1.1 * averageCost2;
-                BigDecimal resultExitPrice2 = new BigDecimal(exitPrice2).setScale(4, HALF_UP);
+                amount3 = (int) ceil((money/ entryPoint) * 0.3);
+//                averageCost2 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
+//                exitPrice2 = 1.1 * averageCost2;
+//                BigDecimal resultExitPrice2 = new BigDecimal(exitPrice2).setScale(4, HALF_UP);
 
+
+                cost4 = 0.75 * entryPoint;
+                BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
+                amount4 = (int) ceil((money/ entryPoint) * 0.5);
 
                 response = ("<b> Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
                         "\uD83D\uDFE2<b>Точка  входа 1.  --> </b> " + entryPoint +
-                        "\n<b>Размер позиции: </b>" + amount1  + "\n" +
-                        "<b>Точка выхода (3%): </b>" + resultExitPrice1 + "\n" + "\n"
+                        "\n<b>Размер позиции: </b>" + amount1  + "\n"
                         + "\uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 2.  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +  "\n"
-                        + "<b>Точка выхода (5%): </b>" + resultExitPrice + "\n" + "\n"
                         + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 3.  --> </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +  "\n"
-                        + "<b>Точка выхода (10%): </b>" + resultExitPrice2);
+                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b> Точка входа 4.  --> </b>" + resultCost4+
+                        "\n<b>Размер позиции: </b>" + amount4 +  "\n");
 
             } else if (operation.equals("Шорт")) {
-                amount1 = (int) Math.ceil((money / entryPoint) * 0.3);
-                exitPrice1 = 1.03 * entryPoint;
-                BigDecimal resultExitPrice1 = new BigDecimal(exitPrice1).setScale(4, HALF_UP);
+                amount1 = (int) Math.ceil((money / entryPoint) * 0.15);
+//                exitPrice1 = 1.03 * entryPoint;
+//                BigDecimal resultExitPrice1 = new BigDecimal(exitPrice1).setScale(4, HALF_UP);
 
                 cost2 = 1.05 * entryPoint;
                 BigDecimal resultCost2 = new BigDecimal(cost2).setScale(4, HALF_UP);
-                averageCost = (cost2 + entryPoint) / 2;
+//                averageCost = (cost2 + entryPoint) / 2;
 
                 amount2 = amount1;
-                exitPrice = 0.95 * averageCost;
-                BigDecimal resultExitPrice = new BigDecimal(exitPrice).setScale(4, HALF_UP);
+//                exitPrice = 0.95 * averageCost;
+//                BigDecimal resultExitPrice = new BigDecimal(exitPrice).setScale(4, HALF_UP);
 
 
 
                 cost3 = 1.1 * entryPoint;
-                BigDecimal resultCost3 = new BigDecimal(cost3);
-                resultCost3 = resultCost3.setScale(4, HALF_UP);
-                amount3 = (int) ceil((money / entryPoint) * 0.4);
-                averageCost2 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
-                exitPrice2 = 0.9 * averageCost2;
-                BigDecimal resultExitPrice2 = new BigDecimal(exitPrice2).setScale(4, HALF_UP);
+                BigDecimal resultCost3 = new BigDecimal(cost3).setScale(4, HALF_UP);
+                amount3 = (int) ceil((money / entryPoint) * 0.2);
+//                averageCost2 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
+//                exitPrice2 = 0.9 * averageCost2;
+//                BigDecimal resultExitPrice2 = new BigDecimal(exitPrice2).setScale(4, HALF_UP);
 
+                cost4 = 1.25 * entryPoint;
+                BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
+                amount4 = (int) ceil((money / entryPoint) * 0.5);
 
 
                 response = ("<b> Монета: " + nameMoney + "</b> (Шорт)" + "\n" +
                         "\uD83D\uDD34 <b> <i> Точка  входа 1.   --></i> </b> " + entryPoint +
-                        "\n<b>Размер позиции: </b>" + amount1  + "\n" +
-                        "<b>Точка выхода (3%): </b>" + resultExitPrice1 + "\n" + "\n"
+                        "\n<b>Размер позиции: </b>" + amount1  + "\n"
                         + "\uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 2.   --> </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +  "\n"
-                        + "<b>Точка выхода (5%): </b>" + resultExitPrice + "\n" + "\n"
                         + "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 3.  --> </b>" + resultCost3+
-                        "\n<b>Размер позиции: </b>" + amount3 +  "\n"
-                        + "<b>Точка выхода (10%): </b>" + resultExitPrice2);
+                        "\n<b>Размер позиции: </b>" + amount3 +  "\n"+
+                        "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 4.  --> </b>" + resultCost4+
+                        "\n<b>Размер позиции: </b>" + amount4 +  "\n");
             }
 
         } else {
