@@ -97,9 +97,9 @@ public class Bot extends TelegramLongPollingBot {
                 BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
                 amount4 = (int) ceil((money/ entryPoint) * 0.5);
 
-                response = ("<b>Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
-                        "<b>\1F4B0 Депозит: " + money + " </b> \n\n" +
-                        "\uD83D\uDFE2<b>Вход  -->  </b> " + entryPoint +
+                response = ("<b>\uD83E\uDE99 Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
+                        "<b>\uD83D\uDCB0 Депозит: " + money + " </b> \n\n" +
+                        "\uD83D\uDFE2  <b>Вход  -->  </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n"
                         + "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +  "\n"
@@ -135,8 +135,8 @@ public class Bot extends TelegramLongPollingBot {
                 amount4 = (int) ceil((money / entryPoint) * 0.37);
 
 
-                response = ("<b> Монета: " + nameMoney + "</b> (Шорт) \n" +
-                        "<b> Депозит: " + money + " </b> \n" +
+                response = ("<b>\uD83E\uDE99 Монета: " + nameMoney + "</b> (Шорт) \n" +
+                        "<b>\uD83D\uDCB0 Депозит: " + money + " </b> \n\n" +
                         "\uD83D\uDD34 <b>Вход  -->  </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n"
                         + "\uD83D\uDD34 \uD83D\uDD34 <b>Вход  -->  </b> " + resultCost2 +
