@@ -100,13 +100,14 @@ public class Bot extends TelegramLongPollingBot {
                 amount4 = (int) ceil((money/ entryPoint) * 0.5);
 
                 response = ("<b> Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
-                        "\uD83D\uDFE2<b>Точка  входа 1.  --> </b> " + entryPoint +
+                        "<b> Депозит: " + money + " </b> \n" +
+                        "\uD83D\uDFE2<b>Вход  -->  </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 2.  -->  </b> " + resultCost2 +
+                        + "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +  "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b> Точка входа 3.  --> </b>" + resultCost3+
+                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +  "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b> Точка входа 4.  --> </b>" + resultCost4+
+                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b>Вход  -->  </b>" + resultCost4+
                         "\n<b>Размер позиции: </b>" + amount4 +  "\n");
 
             } else if (operation.equals("Шорт")) {
@@ -133,17 +134,18 @@ public class Bot extends TelegramLongPollingBot {
 
                 cost4 = 1.25 * entryPoint;
                 BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
-                amount4 = (int) ceil((money / entryPoint) * 0.5);
+                amount4 = (int) ceil((money / entryPoint) * 0.37);
 
 
-                response = ("<b> Монета: " + nameMoney + "</b> (Шорт)" + "\n" +
-                        "\uD83D\uDD34 <b> <i> Точка  входа 1.   --></i> </b> " + entryPoint +
+                response = ("<b> Монета: " + nameMoney + "</b> (Шорт) \n" +
+                        "<b> Депозит: " + money + " </b> \n" +
+                        "\uD83D\uDD34 <b>Вход  -->  </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n"
-                        + "\uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 2.   --> </b> " + resultCost2 +
+                        + "\uD83D\uDD34 \uD83D\uDD34 <b>Вход  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +  "\n"
-                        + "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 3.  --> </b>" + resultCost3+
+                        + "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b>Вход  -->  </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +  "\n"+
-                        "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b> Точка входа 4.  --> </b>" + resultCost4+
+                        "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b>Вход  -->  </b>" + resultCost4+
                         "\n<b>Размер позиции: </b>" + amount4 +  "\n");
             }
 
