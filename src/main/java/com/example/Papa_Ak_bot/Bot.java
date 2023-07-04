@@ -86,7 +86,6 @@ public class Bot extends TelegramLongPollingBot {
 
 
 
-
                 cost3 = 0.9 * entryPoint;
                 BigDecimal resultCost3 = new BigDecimal(cost3).setScale(4, HALF_UP);
                 amount3 = (int) ceil((money/ entryPoint) * 0.3);
@@ -94,13 +93,12 @@ public class Bot extends TelegramLongPollingBot {
 //                exitPrice2 = 1.1 * averageCost2;
 //                BigDecimal resultExitPrice2 = new BigDecimal(exitPrice2).setScale(4, HALF_UP);
 
-
                 cost4 = 0.75 * entryPoint;
                 BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
                 amount4 = (int) ceil((money/ entryPoint) * 0.5);
 
-                response = ("<b> Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
-                        "<b> Депозит: " + money + " </b> \n" +
+                response = ("<b>Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
+                        "<b>\1F4B0 Депозит: " + money + " </b> \n\n" +
                         "\uD83D\uDFE2<b>Вход  -->  </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1  + "\n"
                         + "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
