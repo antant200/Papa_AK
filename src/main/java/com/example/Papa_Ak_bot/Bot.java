@@ -70,81 +70,180 @@ public class Bot extends TelegramLongPollingBot {
             double entryPoint = Double.parseDouble(textMess);
 
             int amount1, amount2, amount3, amount4;
-            double cost2, cost3,cost4, averageCost, averageCost2,exitPrice, exitPrice2, exitPrice1;
+            double cost2, cost3,cost4, averageCost2, averageCost3,averageCost4,exitPrice, exitPrice2,
+                    exitPriceTreeProc1,exitPriceFiveProc1,exitPriceSevenProc1,
+                    exitPriceTreeProc2,exitPriceFiveProc2,exitPriceSevenProc2,
+                    exitPriceTreeProc3,exitPriceFiveProc3,exitPriceSevenProc3,
+                    exitPriceTreeProc4,exitPriceFiveProc4,exitPriceSevenProc4;
             if (operation.equals("Лонг")) {
 
                 amount1 = (int) Math.ceil((money / entryPoint) * 0.15);
-//                exitPrice1 = 1.03 * entryPoint;
-//                BigDecimal resultExitPrice1 = new BigDecimal(exitPrice1).setScale(4,HALF_UP);
+
+                exitPriceTreeProc1 = 1.03 * entryPoint;
+                BigDecimal resultExitPriceTreeProc1 = new BigDecimal(exitPriceTreeProc1).setScale(4, HALF_UP);
+                exitPriceFiveProc1 = 1.05 * entryPoint;
+                BigDecimal resultExitPriceFiveProc1 = new BigDecimal(exitPriceFiveProc1).setScale(4, HALF_UP);
+                exitPriceSevenProc1 = 1.07 * entryPoint;
+                BigDecimal resultExitPriceSevenProc1 = new BigDecimal(exitPriceSevenProc1).setScale(4, HALF_UP);
+
 
                 cost2 = 0.95 * entryPoint;
                 BigDecimal resultCost2 = new BigDecimal(cost2).setScale(4, HALF_UP);
-//                averageCost = (cost2 + entryPoint) / 2;
+                averageCost2 = (cost2 + entryPoint) / 2;
                 amount2 = (int) Math.ceil((money / entryPoint) * 0.2);
-//                exitPrice = 1.05*averageCost;
-//                BigDecimal resultExitPrice =  new BigDecimal(exitPrice).setScale(4,HALF_UP);
+
+                exitPriceTreeProc2 = 1.03 * averageCost2;
+                BigDecimal resultExitPriceTreeProc2 = new BigDecimal(exitPriceTreeProc2).setScale(4, HALF_UP);
+                exitPriceFiveProc2 = 1.05 * averageCost2;
+                BigDecimal resultExitPriceFiveProc2 = new BigDecimal(exitPriceFiveProc2).setScale(4, HALF_UP);
+                exitPriceSevenProc2 = 1.07 * averageCost2;
+                BigDecimal resultExitPriceSevenProc2 = new BigDecimal(exitPriceSevenProc2).setScale(4, HALF_UP);
 
 
 
                 cost3 = 0.9 * entryPoint;
                 BigDecimal resultCost3 = new BigDecimal(cost3).setScale(4, HALF_UP);
                 amount3 = (int) ceil((money/ entryPoint) * 0.3);
-//                averageCost2 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
-//                exitPrice2 = 1.1 * averageCost2;
-//                BigDecimal resultExitPrice2 = new BigDecimal(exitPrice2).setScale(4, HALF_UP);
+                averageCost3 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
+
+                exitPriceTreeProc3 = 1.03 * averageCost3;
+                BigDecimal resultExitPriceTreeProc3 = new BigDecimal(exitPriceTreeProc3).setScale(4, HALF_UP);
+                exitPriceFiveProc3 = 1.05 * averageCost3;
+                BigDecimal resultExitPriceFiveProc3 = new BigDecimal(exitPriceFiveProc3).setScale(4, HALF_UP);
+                exitPriceSevenProc3 = 1.07 * averageCost3;
+                BigDecimal resultExitPriceSevenProc3 = new BigDecimal(exitPriceSevenProc3).setScale(4, HALF_UP);
+
 
                 cost4 = 0.75 * entryPoint;
                 BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
                 amount4 = (int) ceil((money/ entryPoint) * 0.5);
+                averageCost4 = (amount4 * cost4 + amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3 + amount4);
+
+                exitPriceTreeProc4 = 1.03 * averageCost4;
+                BigDecimal resultExitPriceTreeProc4 = new BigDecimal(exitPriceTreeProc4).setScale(4, HALF_UP);
+                exitPriceFiveProc4 = 1.05 * averageCost4;
+                BigDecimal resultExitPriceFiveProc4 = new BigDecimal(exitPriceFiveProc4).setScale(4, HALF_UP);
+                exitPriceSevenProc4 = 1.07 * averageCost4;
+                BigDecimal resultExitPriceSevenProc4 = new BigDecimal(exitPriceSevenProc4).setScale(4, HALF_UP);
+
 
                 response = ("<b>\uD83E\uDE99 Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
                         "<b>\uD83D\uDCB0 Депозит: " + money + " </b> \n\n" +
+
+
                         "\uD83D\uDFE2  <b>Вход  -->  </b> " + entryPoint +
-                        "\n<b>Размер позиции: </b>" + amount1  + "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
-                        "\n<b>Размер позиции: </b>" + amount2 +  "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
-                        "\n<b>Размер позиции: </b>" + amount3 +  "\n"
-                        + "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b>Вход  -->  </b>" + resultCost4+
-                        "\n<b>Размер позиции: </b>" + amount4 +  "\n");
+                        "\n<b>Размер позиции: </b>" + amount1 +
+                        "\n\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc1 +
+                        "\n\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc1 +
+                        "\n\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc1 +
+
+
+                        "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
+                        "\n<b>Размер позиции: </b>" + amount2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
+
+
+                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
+                        "\n<b>Размер позиции: </b>" + amount3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
+
+
+                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b>Вход  -->  </b>" + resultCost4+
+                        "\n<b>Размер позиции: </b>" + amount4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
 
             } else if (operation.equals("Шорт")) {
                 amount1 = (int) Math.ceil((money / entryPoint) * 0.15);
-//                exitPrice1 = 1.03 * entryPoint;
-//                BigDecimal resultExitPrice1 = new BigDecimal(exitPrice1).setScale(4, HALF_UP);
+
+                exitPriceTreeProc1 = 0.97 * entryPoint;
+                BigDecimal resultExitPriceTreeProc1 = new BigDecimal(exitPriceTreeProc1).setScale(4, HALF_UP);
+                exitPriceFiveProc1 = 0.95 * entryPoint;
+                BigDecimal resultExitPriceFiveProc1 = new BigDecimal(exitPriceFiveProc1).setScale(4, HALF_UP);
+                exitPriceSevenProc1 = 0.93 * entryPoint;
+                BigDecimal resultExitPriceSevenProc1 = new BigDecimal(exitPriceSevenProc1).setScale(4, HALF_UP);
+
 
                 cost2 = 1.05 * entryPoint;
                 BigDecimal resultCost2 = new BigDecimal(cost2).setScale(4, HALF_UP);
-//                averageCost = (cost2 + entryPoint) / 2;
-
                 amount2 = amount1;
-//                exitPrice = 0.95 * averageCost;
-//                BigDecimal resultExitPrice = new BigDecimal(exitPrice).setScale(4, HALF_UP);
+                averageCost2 = (cost2 + entryPoint) / 2;
 
+                exitPriceTreeProc2 = 0.97 * averageCost2;
+                BigDecimal resultExitPriceTreeProc2 = new BigDecimal(exitPriceTreeProc2).setScale(4, HALF_UP);
+                exitPriceFiveProc2 = 0.95 * averageCost2;
+                BigDecimal resultExitPriceFiveProc2 = new BigDecimal(exitPriceFiveProc2).setScale(4, HALF_UP);
+                exitPriceSevenProc2 = 0.93 * averageCost2;
+                BigDecimal resultExitPriceSevenProc2 = new BigDecimal(exitPriceSevenProc2).setScale(4, HALF_UP);
 
 
                 cost3 = 1.1 * entryPoint;
                 BigDecimal resultCost3 = new BigDecimal(cost3).setScale(4, HALF_UP);
                 amount3 = (int) ceil((money / entryPoint) * 0.2);
-//                averageCost2 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
-//                exitPrice2 = 0.9 * averageCost2;
-//                BigDecimal resultExitPrice2 = new BigDecimal(exitPrice2).setScale(4, HALF_UP);
+                averageCost3 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
+
+                exitPriceTreeProc3 = 0.97 * averageCost3;
+                BigDecimal resultExitPriceTreeProc3 = new BigDecimal(exitPriceTreeProc3).setScale(4, HALF_UP);
+                exitPriceFiveProc3 = 0.95 * averageCost3;
+                BigDecimal resultExitPriceFiveProc3 = new BigDecimal(exitPriceFiveProc3).setScale(4, HALF_UP);
+                exitPriceSevenProc3 = 0.93 * averageCost3;
+                BigDecimal resultExitPriceSevenProc3 = new BigDecimal(exitPriceSevenProc3).setScale(4, HALF_UP);
+
 
                 cost4 = 1.25 * entryPoint;
                 BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
                 amount4 = (int) ceil((money / entryPoint) * 0.37);
+                averageCost4 = (amount4 * cost4 + amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3 + amount4);
+
+                exitPriceTreeProc4 = 0.97 * averageCost4;
+                BigDecimal resultExitPriceTreeProc4 = new BigDecimal(exitPriceTreeProc4).setScale(4, HALF_UP);
+                exitPriceFiveProc4 = 0.95 * averageCost4;
+                BigDecimal resultExitPriceFiveProc4 = new BigDecimal(exitPriceFiveProc4).setScale(4, HALF_UP);
+                exitPriceSevenProc4 = 0.93 * averageCost4;
+                BigDecimal resultExitPriceSevenProc4 = new BigDecimal(exitPriceSevenProc4).setScale(4, HALF_UP);
 
 
                 response = ("<b>\uD83E\uDE99 Монета: " + nameMoney + "</b> (Шорт) \n" +
                         "<b>\uD83D\uDCB0 Депозит: " + money + " </b> \n\n" +
-                        "\uD83D\uDD34 <b>Вход  -->  </b> " + entryPoint +
-                        "\n<b>Размер позиции: </b>" + amount1  + "\n"
-                        + "\uD83D\uDD34 \uD83D\uDD34 <b>Вход  -->  </b> " + resultCost2 +
-                        "\n<b>Размер позиции: </b>" + amount2 +  "\n"
-                        + "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b>Вход  -->  </b>" + resultCost3+
-                        "\n<b>Размер позиции: </b>" + amount3 +  "\n"+
-                        "\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 <b>Вход  -->  </b>" + resultCost4+
-                        "\n<b>Размер позиции: </b>" + amount4 +  "\n");
+
+
+                        "\uD83D\uDFE2  <b>Вход  -->  </b> " + entryPoint +
+                        "\n<b>Размер позиции: </b>" + amount1 +
+                        "\n\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc1 +
+                        "\n\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc1 +
+                        "\n\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc1 +
+
+
+                        "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
+                        "\n<b>Размер позиции: </b>" + amount2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
+                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
+
+
+                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
+                        "\n<b>Размер позиции: </b>" + amount3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
+
+
+                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b>Вход  -->  </b>" + resultCost4+
+                        "\n<b>Размер позиции: </b>" + amount4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
+                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
             }
 
         } else {
