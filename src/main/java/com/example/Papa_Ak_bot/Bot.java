@@ -133,33 +133,33 @@ public class Bot extends TelegramLongPollingBot {
 
                         "\uD83D\uDFE2  <b>Вход  -->  </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1 +
-                        "\n\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc1 +
-                        "\n\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc1 +
-                        "\n\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc1 +
+                        "\n\uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc1 +
+                        "\n\uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc1 +
+                        "\n\uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc1 +
 
 
-                        "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
+                        "\n\n\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
 
 
-                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
+                        "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
 
 
-                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b>Вход  -->  </b>" + resultCost4+
+                        "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost4+
                         "\n<b>Размер позиции: </b>" + amount4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
 
             } else if (operation.equals("Шорт")) {
                 amount1 = (int) Math.ceil((money / entryPoint) * 0.15);
@@ -217,33 +217,33 @@ public class Bot extends TelegramLongPollingBot {
 
                         "\uD83D\uDFE2  <b>Вход  -->  </b> " + entryPoint +
                         "\n<b>Размер позиции: </b>" + amount1 +
-                        "\n\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc1 +
-                        "\n\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc1 +
-                        "\n\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc1 +
+                        "\n\uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc1 +
+                        "\n\uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc1 +
+                        "\n\uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc1 +
 
 
-                        "\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
+                        "\n\n\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
-                        "\n\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
 
 
-                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
+                        "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
 
 
-                        "\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 <b>Вход  -->  </b>" + resultCost4+
+                        "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost4+
                         "\n<b>Размер позиции: </b>" + amount4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Средняя цена  -->  </b>" + averageCost4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
-                        "\n\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34<b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
             }
 
         } else {
