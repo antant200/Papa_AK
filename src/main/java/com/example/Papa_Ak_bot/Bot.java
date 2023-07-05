@@ -153,7 +153,7 @@ public class Bot extends TelegramLongPollingBot {
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount2 +
+                        "\n<b>Итоговое количество позиций  -->  </b>" + sumAmount2 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
@@ -162,7 +162,7 @@ public class Bot extends TelegramLongPollingBot {
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount3 +
+                        "\n<b>Итоговое количество позиций  -->  </b>" + sumAmount3 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost4+
@@ -171,7 +171,8 @@ public class Bot extends TelegramLongPollingBot {
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount4);
+                        "\n<b>Итоговое количество позиций  -->  </b>" + sumAmount4);
+
 
             } else if (operation.equals("Шорт")) {
                 amount1 = (int) Math.ceil((money / entryPoint) * 0.15);
@@ -247,7 +248,7 @@ public class Bot extends TelegramLongPollingBot {
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount2 +
+                        "\n<b>Итоговое количество позиций  -->  </b>" + sumAmount2 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
@@ -256,7 +257,7 @@ public class Bot extends TelegramLongPollingBot {
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount3 +
+                        "\n<b>Итоговое количество позиций  -->  </b>" + sumAmount3 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost4+
@@ -265,7 +266,7 @@ public class Bot extends TelegramLongPollingBot {
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount4);
+                        "\n<b>Итоговое количество позиций  -->  </b>" + sumAmount4);
 
             }
 
