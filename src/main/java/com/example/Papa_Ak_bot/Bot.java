@@ -90,6 +90,7 @@ public class Bot extends TelegramLongPollingBot {
                 cost2 = 0.95 * entryPoint;
                 BigDecimal resultCost2 = new BigDecimal(cost2).setScale(4, HALF_UP);
                 averageCost2 = (cost2 + entryPoint) / 2;
+                BigDecimal resultAverageCost2 = new BigDecimal(averageCost2).setScale(4, HALF_UP);
                 amount2 = (int) Math.ceil((money / entryPoint) * 0.2);
 
                 exitPriceTreeProc2 = 1.03 * averageCost2;
@@ -99,12 +100,15 @@ public class Bot extends TelegramLongPollingBot {
                 exitPriceSevenProc2 = 1.07 * averageCost2;
                 BigDecimal resultExitPriceSevenProc2 = new BigDecimal(exitPriceSevenProc2).setScale(4, HALF_UP);
 
+                int sumAmount2 = amount1 + amount2;
+
 
 
                 cost3 = 0.9 * entryPoint;
                 BigDecimal resultCost3 = new BigDecimal(cost3).setScale(4, HALF_UP);
                 amount3 = (int) ceil((money/ entryPoint) * 0.3);
                 averageCost3 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
+                BigDecimal resultAverageCost3 = new BigDecimal(averageCost3).setScale(4, HALF_UP);
 
                 exitPriceTreeProc3 = 1.03 * averageCost3;
                 BigDecimal resultExitPriceTreeProc3 = new BigDecimal(exitPriceTreeProc3).setScale(4, HALF_UP);
@@ -113,11 +117,14 @@ public class Bot extends TelegramLongPollingBot {
                 exitPriceSevenProc3 = 1.07 * averageCost3;
                 BigDecimal resultExitPriceSevenProc3 = new BigDecimal(exitPriceSevenProc3).setScale(4, HALF_UP);
 
+                int sumAmount3 = amount1 + amount2 + amount3;
+
 
                 cost4 = 0.75 * entryPoint;
                 BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
                 amount4 = (int) ceil((money/ entryPoint) * 0.5);
                 averageCost4 = (amount4 * cost4 + amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3 + amount4);
+                BigDecimal resultAverageCost4 = new BigDecimal(averageCost4).setScale(4, HALF_UP);
 
                 exitPriceTreeProc4 = 1.03 * averageCost4;
                 BigDecimal resultExitPriceTreeProc4 = new BigDecimal(exitPriceTreeProc4).setScale(4, HALF_UP);
@@ -125,6 +132,8 @@ public class Bot extends TelegramLongPollingBot {
                 BigDecimal resultExitPriceFiveProc4 = new BigDecimal(exitPriceFiveProc4).setScale(4, HALF_UP);
                 exitPriceSevenProc4 = 1.07 * averageCost4;
                 BigDecimal resultExitPriceSevenProc4 = new BigDecimal(exitPriceSevenProc4).setScale(4, HALF_UP);
+
+                int sumAmount4 = amount1 + amount2 + amount3 + amount4;
 
 
                 response = ("<b>\uD83E\uDE99 Монета: " + nameMoney + " </b> (Лонг) " + "\n" +
@@ -140,26 +149,29 @@ public class Bot extends TelegramLongPollingBot {
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + resultAverageCost2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount2 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + resultAverageCost3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount3 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost4+
                         "\n<b>Размер позиции: </b>" + amount4 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + resultAverageCost4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount4);
 
             } else if (operation.equals("Шорт")) {
                 amount1 = (int) Math.ceil((money / entryPoint) * 0.15);
@@ -176,6 +188,7 @@ public class Bot extends TelegramLongPollingBot {
                 BigDecimal resultCost2 = new BigDecimal(cost2).setScale(4, HALF_UP);
                 amount2 = amount1;
                 averageCost2 = (cost2 + entryPoint) / 2;
+                BigDecimal resultAverageCost2 = new BigDecimal(averageCost2).setScale(4, HALF_UP);
 
                 exitPriceTreeProc2 = 0.97 * averageCost2;
                 BigDecimal resultExitPriceTreeProc2 = new BigDecimal(exitPriceTreeProc2).setScale(4, HALF_UP);
@@ -184,11 +197,13 @@ public class Bot extends TelegramLongPollingBot {
                 exitPriceSevenProc2 = 0.93 * averageCost2;
                 BigDecimal resultExitPriceSevenProc2 = new BigDecimal(exitPriceSevenProc2).setScale(4, HALF_UP);
 
+                int sumAmount2 = amount1 + amount2;
 
                 cost3 = 1.1 * entryPoint;
                 BigDecimal resultCost3 = new BigDecimal(cost3).setScale(4, HALF_UP);
                 amount3 = (int) ceil((money / entryPoint) * 0.2);
                 averageCost3 = (amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3);
+                BigDecimal resultAverageCost3 = new BigDecimal(averageCost3).setScale(4, HALF_UP);
 
                 exitPriceTreeProc3 = 0.97 * averageCost3;
                 BigDecimal resultExitPriceTreeProc3 = new BigDecimal(exitPriceTreeProc3).setScale(4, HALF_UP);
@@ -197,11 +212,14 @@ public class Bot extends TelegramLongPollingBot {
                 exitPriceSevenProc3 = 0.93 * averageCost3;
                 BigDecimal resultExitPriceSevenProc3 = new BigDecimal(exitPriceSevenProc3).setScale(4, HALF_UP);
 
+                int sumAmount3 = amount1 + amount2 + amount3;
+
 
                 cost4 = 1.25 * entryPoint;
                 BigDecimal resultCost4 = new BigDecimal(cost4).setScale(4, HALF_UP);
                 amount4 = (int) ceil((money / entryPoint) * 0.37);
                 averageCost4 = (amount4 * cost4 + amount3 * cost3 + amount2 * cost2 + amount1 * entryPoint) / (amount1 + amount2 + amount3 + amount4);
+                BigDecimal resultAverageCost4 = new BigDecimal(averageCost4).setScale(4, HALF_UP);
 
                 exitPriceTreeProc4 = 0.97 * averageCost4;
                 BigDecimal resultExitPriceTreeProc4 = new BigDecimal(exitPriceTreeProc4).setScale(4, HALF_UP);
@@ -210,6 +228,7 @@ public class Bot extends TelegramLongPollingBot {
                 exitPriceSevenProc4 = 0.93 * averageCost4;
                 BigDecimal resultExitPriceSevenProc4 = new BigDecimal(exitPriceSevenProc4).setScale(4, HALF_UP);
 
+                int sumAmount4 = amount1 + amount2 + amount3 + amount4;
 
                 response = ("<b>\uD83E\uDE99 Монета: " + nameMoney + "</b> (Шорт) \n" +
                         "<b>\uD83D\uDCB0 Депозит: " + money + " </b> \n\n" +
@@ -224,26 +243,30 @@ public class Bot extends TelegramLongPollingBot {
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b> " + resultCost2 +
                         "\n<b>Размер позиции: </b>" + amount2 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + resultAverageCost2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc2 +
                         "\n\uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc2 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount2 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost3+
                         "\n<b>Размер позиции: </b>" + amount3 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + resultAverageCost3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc3 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc3 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount3 +
 
 
                         "\n\n\uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2 \uD83D\uDFE2  <b>Вход  -->  </b>" + resultCost4+
                         "\n<b>Размер позиции: </b>" + amount4 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + averageCost4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Средняя цена  -->  </b>" + resultAverageCost4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (3%)  -->  </b>" + resultExitPriceTreeProc4 +
                         "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (5%)  -->  </b>" + resultExitPriceFiveProc4 +
-                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4);
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Выход (7%)  -->  </b>" + resultExitPriceSevenProc4 +
+                        "\n\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34  <b>Итоговое количество позиций  -->  </b>" + sumAmount4);
+
             }
 
         } else {
